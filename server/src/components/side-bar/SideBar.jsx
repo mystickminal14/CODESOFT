@@ -52,14 +52,7 @@ export default function SideBar() {
         </button>
       </nav>
       <div className="p-2 mt-6 flex flex-col gap-4">
-        <NavLink to="/app/dashboard">
-          <SideBarButtons
-            icon={<LuLayoutDashboard />}
-            show={show}
-            btnTitle="My Home"
-            isActive={checkIsActive("/app/dashboard")}
-          />
-        </NavLink>
+        
         <div className="flex flex-col gap-2">
           <NavLink to="/app/task-management/board">
             <SideBarButtons
@@ -71,82 +64,7 @@ export default function SideBar() {
               isActive={checkIsActive("/app/task-management/board")}
             />
           </NavLink>
-          <div className={`open ${showMenu.task && show ? "click" : ""}`}>
-            <div className="px-4 py-1">
-              <ul className="border-l flex flex-col gap-4 border-slate-700 px-4">
-                <SubMenu icon={<LuLayoutDashboard />} btnTitle="Boards" />
-                <SubMenu icon={<LuLayoutDashboard />} btnTitle="Doing" />
-                <SubMenu icon={<LuLayoutDashboard />} btnTitle="Completed" />
-              </ul>
-            </div>
-          </div>
-
-          <NavLink to="/app/expense-tracker">
-            <SideBarButtons
-              show={show}
-              icon={<LuLayoutDashboard />}
-              onClick={() => handleSubMenu("expense")}
-              arrow={showMenu.expense ? <IoIosArrowUp /> : <IoIosArrowDown />}
-              btnTitle="Expense Tracker"
-              isActive={checkIsActive("/app/expense-tracker")}
-            />
-          </NavLink>
-          <div className={`open ${showMenu.expense && show ? "click" : ""}`}>
-            <div className="px-4 py-1">
-              <ul className="border-l flex flex-col gap-4 border-slate-700 px-4">
-                <SubMenu icon={<LuLayoutDashboard />} btnTitle="Todo" />
-                <SubMenu icon={<LuLayoutDashboard />} btnTitle="Doing" />
-                <SubMenu icon={<LuLayoutDashboard />} btnTitle="Completed" />
-              </ul>
-            </div>
-          </div>
-
-          <NavLink to="/app/fitness-tracker">
-            <SideBarButtons
-              show={show}
-              icon={<LuLayoutDashboard />}
-              onClick={() => handleSubMenu("fitness")}
-              arrow={showMenu.fitness ? <IoIosArrowUp /> : <IoIosArrowDown />}
-              btnTitle="Fitness Tracker"
-              isActive={checkIsActive("/app/fitness-tracker")}
-            />
-          </NavLink>
-          <div className={`open ${showMenu.fitness && show ? "click" : ""}`}>
-            <div className="px-4 py-1">
-              <ul className="border-l flex flex-col gap-4 border-slate-700 px-4">
-                <SubMenu icon={<LuLayoutDashboard />} btnTitle="Todo" />
-                <SubMenu icon={<LuLayoutDashboard />} btnTitle="Doing" />
-                <SubMenu icon={<LuLayoutDashboard />} btnTitle="Completed" />
-              </ul>
-            </div>
-          </div>
-
-          <NavLink to="/app/reports">
-            <SideBarButtons
-              show={show}
-              icon={<LuLayoutDashboard />}
-              onClick={() => handleSubMenu("reports")}
-              arrow={showMenu.reports ? <IoIosArrowUp /> : <IoIosArrowDown />}
-              btnTitle="Reports"
-              isActive={checkIsActive("/app/reports")}
-            />
-          </NavLink>
-          <div className={`open ${showMenu.reports && show ? "click" : ""}`}>
-            <div className="px-4 py-1">
-              <ul className="border-l flex flex-col gap-4 border-slate-700 px-4">
-                <SubMenu icon={<LuLayoutDashboard />} btnTitle="Todo" />
-                <SubMenu icon={<LuLayoutDashboard />} btnTitle="Doing" />
-                <SubMenu icon={<LuLayoutDashboard />} btnTitle="Completed" />
-              </ul>
-            </div>
-          </div>
-          <NavLink to="/app/profile">
-            <SideBarButtons
-              icon={<LuLayoutDashboard />}
-              show={show}
-              btnTitle="My Profile"
-              isActive={checkIsActive("/app/profile")}
-            /></NavLink>
+        
         </div>
       </div>
       <div

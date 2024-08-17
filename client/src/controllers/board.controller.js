@@ -57,7 +57,7 @@ const retrieve = asyncHandler(async (req, res) => {
   }
 
   const boards = await Board.find({
-    $and: [{ createdBy: userId }, { isDeleted: false }],
+    $and: [{ createdBy: userId }, { status: "Active" }],
   });
   if (!boards) {
     throw new ApiError(400, "No Records found!!");
